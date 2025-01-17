@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "author": "Kubyx integrations & Hosting solutions",
   "description": "Set Google-Fonts examples to Lorem Ipsum",
+  "action": {
+    "default_popup": "ui/index.html"
+  },
   "content_scripts": [
     {
       "js": ["scripts/unwoke.js"],
@@ -12,5 +15,5 @@
       ]
     }
   ],
-  "permissions": ["activeTab"]
+  "permissions": ["activeTab", "storage"]
 }
