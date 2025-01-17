@@ -10,22 +10,26 @@ let storedText;
 
 chrome.storage.local.get(['text_used']).then(result => {
   storedText = parseInt(result.text_used);
+  setTimeout(() => {
+    const pageText = document.querySelectorAll('[contenteditable], .text-container, .hero__text-sample');
+    const fox = "The quick brown fox jumps over the lazy dog ";
+    const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+  
+    pageText.forEach(textField => {
+      const fontSize = parseInt(window.getComputedStyle(textField, null).getPropertyValue('font-size'));
+  
+      if (storedText == availableTexts.fox) {
+        textField.textContent = fontSize <= 24 ? fox.repeat(20) : fox.repeat(3);
+      } else if (storedText == availableTexts.lorem) {
+        textField.textContent = fontSize <= 24 ? lorem.repeat(3) : lorem;
+      } else {
+        return;
+      }
+    });
+  }, 500);
 });
 
-setTimeout(() => {
-  const pageText = document.querySelectorAll('[contenteditable], .text-container, .hero__text-sample');
-  const fox = "The quick brown fox jumps over the lazy dog ";
-  const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 
-  pageText.forEach(textField => {
-    if (storedText == availableTexts.fox) {
-      const fontSize = parseInt(window.getComputedStyle(textField, null).getPropertyValue('font-size'));
-      textField.textContent = fontSize <= 24 ? fox.repeat(20) : fox.repeat(3);
-    } else {
-      textField.textContent = fontSize <= 24 ? lorem.repeat(3) : lorem;
-    }
-  });
-}, 500);
 
 // setTimeout(() => {
   
