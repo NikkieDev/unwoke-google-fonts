@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Unwoke Google-fonts",
+  "version": "1.0.0",
+  "author": "Kubyx integrations & Hosting solutions",
+  "description": "Set Google-Fonts examples to Lorem Ipsum",
+  "content_scripts": [
+    {
+      "js": ["scripts/unwoke.js"],
+      "matches": [
+        "https://fonts.google.com/*"
+      ]
+    }
+  ],
+  "permissions": ["activeTab"]
+}
