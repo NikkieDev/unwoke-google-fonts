@@ -1,0 +1,28 @@
+.body--wrapper {
+  min-height: 200px;
+  min-width: fit-content;
+  padding: 12px 24px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+}
+
+.button--wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.button {
+  color: #03c2fc;
+  background-color: white;
+  box-shadow: 13px 10px 15px -3px rgba(0,0,0,0.1);
+  padding: 6px 12px;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.button:hover {
+  box-shadow: inset 13px 10px 15px -3px rgba(0,0,0,0.1);
+}
